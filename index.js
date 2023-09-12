@@ -95,13 +95,13 @@ client.on("messageCreate", async message => {
     if (message.content.startsWith(prefix + "warn")) {
         const ganyu = message.mentions.members.first()
         const ganyu123 = message.mentions.users.first()
-        const ganyutits = message.content.split(' ').slice(2).join(' ');
+        const ganyulove12 = message.content.split(' ').slice(2).join(' ');
         if (message.member.roles.cache.some(role => role.name === `Ganyu's Prems`)) {
             if (!ganyu123) { message.channel.send("KILL YOUR SELF") } else {
                 if (ganyu123.id === naru) {
                     message.channel.send("- ..really? wanna die that bad?")
                 } else {
-                    if (!ganyutits[0]) {
+                    if (!ganyulove12[0]) {
                         message.channel.send(`
           **Please specify the reason for the warning.. example:** 
     
@@ -166,7 +166,7 @@ client.on("messageCreate", async message => {
                     .addFields(
                         { name: `name`, value: ganyu123.username },
                         { name: `id`, value: ganyu123.id },
-                        { name: `reason`, value: ganyutits },
+                        { name: `reason`, value: ganyulove12 },
 
                     )
                     .setFooter({ text: "Warn giver : " + " " + message.author.username, iconURL: message.author.avatarURL({ dynamic: true }) })
@@ -177,7 +177,7 @@ client.on("messageCreate", async message => {
                     .setThumbnail(ganyu123.avatarURL({ dynamic: true }))
                     .addFields(
                         { name: `name`, value: ganyu123.username },
-                        { name: `reason`, value: ganyutits }
+                        { name: `reason`, value: ganyulove12 }
                     )
                     .setFooter({ text: "if you think that there is a mistake please contact the mods, thank you~" })
                 ganyu123.send({ embeds: [ganyutities] })
@@ -579,15 +579,15 @@ client.on("messageCreate", async message => {
     if (message.author.bot) return;
     if (message.content.startsWith("a!")) return;
     const ganyu = JSON.parse(fs.readFileSync("./points.json", "utf8"));
-    const ganyutits = JSON.parse(fs.readFileSync("./msgs.json", "utf8"));
+    const ganyulove12 = JSON.parse(fs.readFileSync("./msgs.json", "utf8"));
 
-        if (!ganyutits[message.author.id]) {
-            ganyutits[message.author.id] = {
+        if (!ganyulove12[message.author.id]) {
+            ganyulove12[message.author.id] = {
                 msgs: 1
             }
         } else {
-            ganyutits[message.author.id] = {
-                msgs: Number(ganyutits[message.author.id].msgs) + 1 
+            ganyulove12[message.author.id] = {
+                msgs: Number(ganyulove12[message.author.id].msgs) + 1 
             }
         }
     const ganyuwrite = fs.createWriteStream("./points.json")
@@ -595,7 +595,7 @@ client.on("messageCreate", async message => {
         if (err) throw err;
     })
     const ganyuwrite2 = fs.createWriteStream("./msgs.json")
-    ganyuwrite2.write(JSON.stringify(ganyutits), function(err) {
+    ganyuwrite2.write(JSON.stringify(ganyulove12), function(err) {
         if (err) throw err;
     })
 }
