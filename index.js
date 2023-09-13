@@ -32,7 +32,7 @@ dotenv.config();
 const rest = new REST({ version: '9' }).setToken(process.env.token);
 const log = x => { console.log(`[${moment().format("DD-MM-YYYY HH:mm:ss")}] ${x}`) };
 
-//command handler
+
 let { readdirSync } = require("fs")
 const commands = []
 readdirSync('./commands/normal').forEach(async file => {
@@ -67,7 +67,7 @@ client.on("ready", async () => {
 	log(`${client.user.username}`);
 })
 
-//event-handler
+
 readdirSync('./events').forEach(async file => {
 	const event = require(`./events/${file}`);
 	if (event.once) {
@@ -77,7 +77,7 @@ readdirSync('./events').forEach(async file => {
 	}
 })
 
-//nodejs-listeners
+
 process.on("unhandledRejection", e => {
 	console.log(e)
 })
